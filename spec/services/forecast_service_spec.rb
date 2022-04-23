@@ -8,6 +8,8 @@ RSpec.describe 'The Forecast Service' do
       expect(forecast).to have_key(:current)
       expect(forecast).to have_key(:daily)
       expect(forecast).to have_key(:hourly)
+      expect(forecast).to_not have_key(:minutely)
+      expect(forecast).to_not have_key(:alerts)
     end
   end
 end
