@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Forecast request' do
   #does coordinate need its own test? Would be better encapsulation.
-  it "Gets a forecast for a given city" do
+  xit "Gets a forecast for a given city" do
     VCR.use_cassette("Find forecast") do
       get "/api/v1/forecast?location=denver,co"
 
