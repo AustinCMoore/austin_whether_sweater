@@ -4,9 +4,11 @@ class ForecastPoro
               :hourly_forecast_data,
               :current_weather,
               :daily_weather,
-              :hourly_weather
+              :hourly_weather,
+              :id
 
   def initialize(forecast_data)
+    @id = nil
     @current_forecast_data = forecast_data[:current]
     @daily_forecast_data = forecast_data[:daily]
     @hourly_forecast_data = forecast_data[:hourly]

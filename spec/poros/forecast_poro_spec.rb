@@ -8,6 +8,7 @@ RSpec.describe ForecastPoro do
 
       expect(forecast).to be_an_instance_of(ForecastPoro)
 
+      expect(forecast.id).to eq(nil)
       expect(forecast.current_forecast_data).to be_instance_of(Hash)
       expect(forecast.daily_forecast_data).to be_instance_of(Array)
       expect(forecast.hourly_forecast_data).to be_instance_of(Array)

@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast request' do
-  #does coordinate need its own test? Would be better encapsulation.
-  xit "Gets a forecast for a given city" do
+  it "Gets a forecast for a given city" do
     VCR.use_cassette("Find forecast") do
       get "/api/v1/forecast?location=denver,co"
 
@@ -14,7 +13,7 @@ RSpec.describe 'Forecast request' do
       expect(forecast[:data]).to be_a(Hash)
 
       expect(forecast[:data]).to have_key(:id)
-      expect(forecast[:data][:id]).to eq(null) #is this how to test?
+      expect(forecast[:data][:id]).to eq(nil) #is this how to test?
 
       expect(forecast[:data]).to have_key(:type)
       expect(forecast[:data][:type]).to eq("forecast")
@@ -28,14 +27,13 @@ RSpec.describe 'Forecast request' do
       current_weather = forecast[:data][:attributes][:current_weather]
 
       expect(current_weather).to have_key(:datetime)
-      expect(current_weather[:datetime]).to be_a(DateTime) #or string?
-      expect(current_weather[:datetime]).to eq(DateTime.now)#may need formatting
+      expect(current_weather[:datetime]).to be_a(String)
 
       expect(current_weather).to have_key(:sunrise)
-      expect(current_weather[:sunrise]).to be_a(DateTime) #or string?
+      expect(current_weather[:sunrise]).to be_a(String)
 
       expect(current_weather).to have_key(:sunset)
-      expect(current_weather[:sunset]).to be_a(DateTime) #or string?
+      expect(current_weather[:sunset]).to be_a(String)
 
       expect(current_weather).to have_key(:temperature)
       expect(current_weather[:temperature]).to be_a(Float) #limit decimals?
@@ -44,13 +42,13 @@ RSpec.describe 'Forecast request' do
       expect(current_weather[:feels_like]).to be_a(Float) #limit decimals?
 
       expect(current_weather).to have_key(:humidity)
-      expect(current_weather[:humidity]).to be_a(Float) #or integer?
+      expect(current_weather[:humidity]).to be_a(Float)
 
       expect(current_weather).to have_key(:uvi)
-      expect(current_weather[:uvi]).to be_a(Float) #or integer?
+      expect(current_weather[:uvi]).to be_a(Float)
 
       expect(current_weather).to have_key(:visibility)
-      expect(current_weather[:visibility]).to be_a(Float) #or integer?
+      expect(current_weather[:visibility]).to be_a(Float)
 
       expect(current_weather).to have_key(:conditions)
       expect(current_weather[:conditions]).to be_a(String)
@@ -66,13 +64,13 @@ RSpec.describe 'Forecast request' do
         expect(day).to be_a(Hash)
 
         expect(day).to have_key(:date)
-        expect(day[:date]).to be_a(DateTime) #or string?
+        expect(day[:date]).to be_a(String)
 
         expect(day).to have_key(:sunrise)
-        expect(day[:sunrise]).to be_a(DateTime) #or string?
+        expect(day[:sunrise]).to be_a(String)
 
         expect(day).to have_key(:sunset)
-        expect(day[:sunset]).to be_a(DateTime) #or string?
+        expect(day[:sunset]).to be_a(String)
 
         expect(day).to have_key(:max_temp)
         expect(day[:max_temp]).to be_a(Float) #limited decimal?
@@ -95,7 +93,7 @@ RSpec.describe 'Forecast request' do
         expect(hour).to be_a(Hash)
 
         expect(hour).to have_key(:time)
-        expect(hour[:time]).to be_a(DateTime) #or string?
+        expect(hour[:time]).to be_a(String)
 
         expect(hour).to have_key(:temperature)
         expect(hour[:temperature]).to be_a(Float)
