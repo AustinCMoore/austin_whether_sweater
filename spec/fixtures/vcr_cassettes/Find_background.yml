@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pexels.com/v1/search?locale=en-US&orientation=landscape&per_page=1&query=denver,co&size=large
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 24 Apr 2022 01:51:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 700b314dabc2058b-IAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"c3785b254a2aed835032ccc327141ad2"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Remaining:
+      - '20000'
+      X-Request-Id:
+      - ef7a99e5-bd33-4097-9282-e0df07366021
+      X-Runtime:
+      - '0.117428'
+      X-Server:
+      - alpaca
+      Set-Cookie:
+      - __cf_bm=hoh7xyAhqZ9zs9aVVgt8XAa7hB81No6RCAtcPrEn6tM-1650765073-0-AfHH2kvTDhdMerNppCjFIZ+HRY0iFKituZpbOz/vcEnv9qbA+PIuKY4y6aXCRRXlL4KeZlTYhV1InhBzTD7xoI8=;
+        path=/; expires=Sun, 24-Apr-22 02:21:13 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"per_page":1,"photos":[{"id":8867237,"width":6000,"height":4000,"url":"https://www.pexels.com/photo/woman-in-black-blazer-wearing-a-headset-8867237/","photographer":"Yan
+        Krukov","photographer_url":"https://www.pexels.com/@yankrukov","photographer_id":2905570,"avg_color":"#868583","src":{"original":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg","large2x":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940","large":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940","medium":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350","small":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130","portrait":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800","landscape":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200","tiny":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"},"alt":"Free
+        stock photo of adult, business, call center"}],"total_results":525,"next_page":"https://api.pexels.com/v1/search/?locale=en-US\u0026orientation=landscape\u0026page=2\u0026per_page=1\u0026query=denver%2Cco\u0026size=large"}'
+  recorded_at: Sun, 24 Apr 2022 01:51:13 GMT
+recorded_with: VCR 6.1.0

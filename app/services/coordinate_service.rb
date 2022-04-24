@@ -2,7 +2,7 @@ class CoordinateService
   def self.get_url(url, location)
     conn = Faraday.new(url: "http://www.mapquestapi.com") do |faraday|
       faraday.params[:key] = ENV['mapquest_api_key']
-      faraday.params[:location] = "#{location}"
+      faraday.params[:location] = location
     end
 
     response = conn.get(url)
