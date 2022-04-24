@@ -13,7 +13,7 @@ RSpec.describe 'Forecast request' do
       expect(forecast[:data]).to be_a(Hash)
 
       expect(forecast[:data]).to have_key(:id)
-      expect(forecast[:data][:id]).to eq(nil) #is this how to test?
+      expect(forecast[:data][:id]).to eq(nil) #should this be nil
 
       expect(forecast[:data]).to have_key(:type)
       expect(forecast[:data][:type]).to eq("forecast")
