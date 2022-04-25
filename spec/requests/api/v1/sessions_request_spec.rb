@@ -28,4 +28,41 @@ RSpec.describe 'Sessions request' do
     expect(found_user[:data][:attributes][:api_key]).to be_a(String)
     expect(found_user[:data][:attributes][:api_key]).to eq(created_user.api_key)
   end
+
+  it "sad paths if email is empty" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :email => "",
+                                      :password => "password"
+                                      }
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if password is empty" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => ""
+                                      }
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if wrong email" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :email => "wrong email",
+                                      :password => "password"
+                                      }
+    expect(response.status).to eq(401)
+  end
+
+  it "sad paths if wrong password" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "p@ssword"
+                                      }
+    expect(response.status).to eq(401)
+  end
 end
