@@ -3,8 +3,6 @@ class Api::V1::MunchiesController < ApplicationController
     travel_time_in_seconds = CoordinateFacade.find_time(params[:start], params[:destination])
     travel_time_in_minutes = travel_time_in_seconds/60
     travel_time_in_hours = travel_time_in_minutes/60
-    
-    binding.pry
     #find arrival time (current time + travel time)
     #find restaurant
       #if arrival time in hours happy path
