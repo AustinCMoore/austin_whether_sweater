@@ -6,6 +6,7 @@ class BackgroundsService
       faraday.params[:orientation] = orientation
       faraday.params[:size] = size
       faraday.params[:locale] = locale
+      faraday.headers['Authorization'] = ENV['pexels_api_key']
     end
 
     response = conn.get(url)

@@ -7,6 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - 563492ad6f91700001000001d2d83c8f93dc42868ff07a1272ef0984
       User-Agent:
       - Faraday v2.2.0
       Accept-Encoding:
@@ -19,49 +21,52 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 24 Apr 2022 01:51:12 GMT
+      - Sun, 24 Apr 2022 23:32:27 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '514'
       Connection:
       - keep-alive
       Cf-Ray:
-      - 700b31463ff45dc1-IAD
-      Access-Control-Allow-Origin:
-      - "*"
+      - 7012a3688bde8c09-EWR
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Etag:
-      - W/"c3785b254a2aed835032ccc327141ad2"
+      Set-Cookie:
+      - __cf_bm=MEYGydMKFuC5LfuYizq4vGP6_YUy.32RtyNqFa26ea4-1650843147-0-AXW31ob6CCfGVdmVJJhdGoX2c3X6ktch3ssSFr1ahJQOUe6NcVaZhyTkkZ61On1JYK1dt9QG1JRwKUlJJzv7WNc=;
+        path=/; expires=Mon, 25-Apr-22 00:02:27 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      - __cf_bm=mQhZ2IlO_t6F0PKj6LGbfFiLEdIT1ct5AG0mV2FM85o-1650843147-0-AVGZSSRyadm4nLmwNtJZtIB6uLGPvSP1YhMLK8aZJhYNo/lwD5m498W/xK62e1tgMujXVfdA2Ela2MUaz5UgnJY=;
+        path=/; expires=Mon, 25-Apr-22 00:02:27 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Origin, Accept-Encoding
       Cf-Cache-Status:
       - DYNAMIC
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       X-Frame-Options:
       - SAMEORIGIN
-      X-Ratelimit-Remaining:
+      X-Ratelimit-Limit:
       - '20000'
+      X-Ratelimit-Remaining:
+      - '19998'
+      X-Ratelimit-Reset:
+      - '1653362718'
       X-Request-Id:
-      - 29e94461-e5ee-426d-a641-b2cd9a608c3a
+      - 78be8982-d590-4cf3-95bc-46ac31b368e0
       X-Runtime:
-      - '0.083996'
+      - '0.100833'
       X-Server:
       - anteater
-      Set-Cookie:
-      - __cf_bm=KBEI4ofyDZAWivt8arkSBWBbvYTFUogvZOqMv3OYW.c-1650765072-0-AS0QhdUXT7w1123aMp9OZIBpUhidpa9hJFNotknysrnUfTSQtlNJ6tj0axgvXe/nz+FIVzQMLbXnbXEmFZ8hiSI=;
-        path=/; expires=Sun, 24-Apr-22 02:21:12 GMT; domain=.pexels.com; HttpOnly;
-        Secure; SameSite=None
-      Vary:
-      - Accept-Encoding
       Server:
       - cloudflare
-      Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"per_page":1,"photos":[{"id":8867237,"width":6000,"height":4000,"url":"https://www.pexels.com/photo/woman-in-black-blazer-wearing-a-headset-8867237/","photographer":"Yan
-        Krukov","photographer_url":"https://www.pexels.com/@yankrukov","photographer_id":2905570,"avg_color":"#868583","src":{"original":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg","large2x":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940","large":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940","medium":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350","small":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130","portrait":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800","landscape":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200","tiny":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"},"alt":"Free
+        Krukov","photographer_url":"https://www.pexels.com/@yankrukov","photographer_id":2905570,"avg_color":"#868583","src":{"original":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg","large2x":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940","large":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940","medium":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350","small":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130","portrait":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800","landscape":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200","tiny":"https://images.pexels.com/photos/8867237/pexels-photo-8867237.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"},"liked":false,"alt":"Free
         stock photo of adult, business, call center"}],"total_results":525,"next_page":"https://api.pexels.com/v1/search/?locale=en-US\u0026orientation=landscape\u0026page=2\u0026per_page=1\u0026query=denver%2Cco\u0026size=large"}'
-  recorded_at: Sun, 24 Apr 2022 01:51:12 GMT
+  recorded_at: Sun, 24 Apr 2022 23:32:27 GMT
 recorded_with: VCR 6.1.0
