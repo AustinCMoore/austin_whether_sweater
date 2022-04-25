@@ -1,19 +1,18 @@
 class MunchieSerializer
   include JSONAPI::Serializer
-  attributes :id
+  attributes :destination_city, :travel_time
 
-  attributes :current_weather do |forecast|
+  attributes :forecast do |munchie|
     {
-      datetime: forecast.current_weather.datetime,
-      sunrise: forecast.current_weather.sunrise,
-      sunset: forecast.current_weather.sunset,
-      temperature: forecast.current_weather.temperature,
-      feels_like: forecast.current_weather.feels_like,
-      humidity: forecast.current_weather.humidity,
-      uvi: forecast.current_weather.uvi,
-      visibility: forecast.current_weather.visibility,
-      conditions: forecast.current_weather.conditions,
-      icon: forecast.current_weather.icon
+      temperature: munchie.forecast.temperature.to_s,
+      summary: munchie.forecast.conditions
+    }
+  end
+
+  attribute :restaurant do |munchie|
+    {
+      name: munchie.restaurant.name,
+      address: munchie.restaurant.address
     }
   end
 end
