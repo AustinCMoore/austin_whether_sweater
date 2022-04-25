@@ -32,4 +32,53 @@ RSpec.describe 'Users request' do
 
     expect(User.all.count).to eq(user_count += 1)
   end
+
+  it "sad paths if email is empty" do
+    post "/api/v1/users", :params => {
+                                      :email => "",
+                                      :password => "password",
+                                      :password_confirmation => "password"
+                                      }
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if password is empty" do
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "",
+                                      :password_confirmation => "password"
+                                      }
+    expect(response.status).to eq(400)
+  end
+
+
+  it "sad paths if password confirmation is empty" do
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "password",
+                                      :password_confirmation => ""
+                                      }
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if passwords don't match" do
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "password",
+                                      :password_confirmation => "p@ssword"
+                                      }
+    expect(response.status).to eq(401)
+  end
+
+  it "sad paths if email is duplicate" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "password",
+                                      :password_confirmation => "password"
+                                      }
+    expect(response.status).to eq(403)
+  end
 end
