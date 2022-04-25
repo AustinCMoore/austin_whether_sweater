@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Munchies request' do
-  it "Gets a restaurant for a given state, city, food type" do
+  it "Gets an open restaurant for a given starting city, ending city, and food type" do
     VCR.use_cassette("Find munchies") do
       get "/api/v1/munchies?start=denver,co&destination=pueblo,co&food=chinese"
 
