@@ -1,7 +1,9 @@
 class Api::V1::RoadTripController < ApplicationController
   def create
     user = User.find_by(api_key: params[:api_key])
-    if params[:origin].empty? || params[:destination].empty? || params[:api_key].empty?
+    if params[:origin].nil? || params[:destination].nil? || params[:api_key].nil?
+      render :status => 400
+    elsif params[:origin].empty? || params[:destination].empty? || params[:api_key].empty?
       render :status => 400
     elsif user.nil?
       render :status => 401

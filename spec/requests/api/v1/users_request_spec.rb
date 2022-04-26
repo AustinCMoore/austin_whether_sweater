@@ -62,6 +62,32 @@ RSpec.describe 'Users request' do
     expect(response.status).to eq(400)
   end
 
+  it "sad paths if email is nil" do
+    post "/api/v1/users", :params => {
+                                      :password => "password",
+                                      :password_confirmation => "password"
+                                      }
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if password is nil" do
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password_confirmation => "password"
+                                      }
+    expect(response.status).to eq(400)
+  end
+
+
+  it "sad paths if password confirmation is nil" do
+    post "/api/v1/users", :params => {
+                                      :email => "whatever@example.com",
+                                      :password => "password"
+                                      }
+    expect(response.status).to eq(400)
+  end
+
   it "sad paths if passwords don't match" do
     post "/api/v1/users", :params => {
                                       :email => "whatever@example.com",

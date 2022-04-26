@@ -66,12 +66,39 @@ RSpec.describe 'Road Trip request' do
     expect(response.status).to eq(400)
   end
 
-  it "sad paths with empty key" do
+  it "sad paths with nil key" do
     user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
     post "/api/v1/road_trip", :params => {
                                           origin: "Denver,CO",
                                           destination: "Pueblo,CO",
                                           api_key: "",
+                                        }
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths with nil origin" do
+    user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/road_trip", :params => {
+                                          destination: "Pueblo,CO",
+                                          api_key: user.api_key,
+                                        }
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths with nil destination" do
+    user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/road_trip", :params => {
+                                          origin: "Denver,CO",
+                                          api_key: user.api_key,
+                                        }
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths with empty key" do
+    user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/road_trip", :params => {
+                                          origin: "Denver,CO",
+                                          destination: "Pueblo,CO",
                                         }
     expect(response.status).to eq(400)
   end

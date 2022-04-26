@@ -48,6 +48,23 @@ RSpec.describe 'Sessions request' do
     expect(response.status).to eq(400)
   end
 
+  it "sad paths if email is nil" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :password => "password"
+                                      }
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths if password is nil" do
+    User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
+    post "/api/v1/sessions", :params => {
+                                      :email => "whatever@example.com"
+                                      }
+    expect(response.status).to eq(400)
+  end
+
   it "sad paths if wrong email" do
     User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: SecureRandom.base64(10))
     post "/api/v1/sessions", :params => {
