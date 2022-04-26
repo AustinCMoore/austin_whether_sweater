@@ -11,8 +11,8 @@ class DailyForecast
     @date = Time.at(forecast_data[:dt]).strftime("%F")
     @sunrise = Time.at(forecast_data[:sunrise]).to_s
     @sunset = Time.at(forecast_data[:sunset]).to_s
-    @max_temp = forecast_data[:temp][:max]
-    @min_temp = forecast_data[:temp][:min]
+    @max_temp = (forecast_data[:temp][:max]).to_f
+    @min_temp = (forecast_data[:temp][:min]).to_f
     @conditions = forecast_data[:weather][0][:description]
     @icon = forecast_data[:weather][0][:icon]
   end

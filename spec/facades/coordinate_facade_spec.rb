@@ -7,4 +7,11 @@ RSpec.describe 'The Coordinate Facade' do
       expect(coordinate).to be_instance_of(CoordinatePoro)
     end
   end
+
+  it ".find_time" do
+    VCR.use_cassette('.find_time') do
+      time = CoordinateFacade.find_time("denver,co", "pueblo,co")
+      expect(time).to be_an(Integer)
+    end
+  end
 end

@@ -15,4 +15,8 @@ class ForecastService
   def self.get_by_latlong(latitude, longitude)
     get_url("/data/2.5/onecall", latitude, longitude, "alerts,minutely", "imperial")
   end
+
+  def self.get_by_hour(latitude, longitude)
+    get_url("/data/2.5/onecall", latitude, longitude, "current,daily,alerts,minutely", "imperial")
+  end
 end

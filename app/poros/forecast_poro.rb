@@ -26,7 +26,7 @@ class ForecastPoro
   end
 
   def hourly_weather
-    forecast = @daily_forecast_data.first(8).map do |hour|
+    forecast = @hourly_forecast_data.first(8).map do |hour|
       HourlyForecast.new(hour)
     end
     return forecast
