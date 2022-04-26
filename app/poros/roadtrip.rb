@@ -14,8 +14,13 @@ class Roadtrip
   end
 
   def travel_time
-     hours = @travel_time_in_seconds / 3600
-     minutes = (@travel_time_in_seconds / 60) % 60
-     formatted_time = "#{hours.to_i} hours #{minutes.to_i} min"
+    if @travel_time_in_seconds.nil?
+      message = "impossible"
+      return message
+    else
+      hours = @travel_time_in_seconds / 3600
+      minutes = (@travel_time_in_seconds / 60) % 60
+      formatted_time = "#{hours.to_i} hours #{minutes.to_i} min"
+    end
    end
 end
