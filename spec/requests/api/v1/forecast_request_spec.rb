@@ -106,4 +106,16 @@ RSpec.describe 'Forecast request' do
       end
     end
   end
+
+  it "sad paths with empty location" do
+    get "/api/v1/forecast?location="
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths with nil location" do
+    get "/api/v1/forecast"
+
+    expect(response.status).to eq(400)
+  end
 end

@@ -25,4 +25,16 @@ RSpec.describe 'Background request' do
       expect(background[:data][:attributes][:photographer]).to be_a(String)
     end
   end
+
+  it "sad paths with empty location" do
+    get "/api/v1/backgrounds?location="
+
+    expect(response.status).to eq(400)
+  end
+
+  it "sad paths with nil location" do
+    get "/api/v1/backgrounds"
+
+    expect(response.status).to eq(400)
+  end
 end
